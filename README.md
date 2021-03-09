@@ -47,3 +47,4 @@ To participate in this project, please review the following guidelines:
 * <a href="https://github.com/uyennguyen30696" target="_blank">Uyen Nguyen</a>
 * <a href="https://github.com/Rudy-Menjivar" target="_blank">Rudy Menjivar</a>
 * <a href="https://github.com/madehopemorr" target="_blank">Madeline Morris</a>
+* <a href="https://github.com/gstinsonjr42" target="_blank">Greg Stinson</a>
