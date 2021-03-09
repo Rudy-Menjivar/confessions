@@ -1,4 +1,3 @@
-//import react and  styling file
 import React from "react";
 import "./style.css";
 
