@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const confessionSchema = new Schema({
     title: {type: String, required: true },
+    content: {type: String, required: true},
     user: { type: String, required: true },
     category: String,
     date: { type: Date, default: Date.now }
