@@ -8,25 +8,25 @@ const confessionSeed = [
 {
     title: "I skipped the gym",
     user: "gymLover101",
-    synopsis: "Gym",
+    category: "Gym",
     date: new Date(Date.now())
 },
 {
     title: "I cheated in school",
     user: "collegeKid101",
-    synopsis: "School",
+    category: "School",
     date: new Date(Date.now())
 },
 {
     title: "I lied to my mom",
     user: "badKid101",
-    synopsis: "Lies",
+    category: "Lies",
     date: new Date(Date.now())
 },
 {
     title: "I skipped class",
     user: "harvardBound101",
-    synopsis: "School",
+    category: "School",
     date: new Date(Date.now())
 }
 ];
