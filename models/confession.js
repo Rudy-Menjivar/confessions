@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const confessionSchema = new Schema({
     title: {type: String, required: true },
     user: { type: String, required: true },
-    synopsis: String,
+    category: String,
     date: { type: Date, default: Date.now }
 });
 
