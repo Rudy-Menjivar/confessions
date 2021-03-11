@@ -4,7 +4,6 @@ const db = require("../models");
 mongoose.connect(
 
 )
-
 const confessionSeed = [
 {
     title: "I skipped the gym",
