@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./style.css";
 
 export default class SignUp extends Component {
     render() {
@@ -22,9 +23,7 @@ export default class SignUp extends Component {
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                <p className="forgot-password text-right">
-                    Already registered <a href="#">sign in?</a>
-                </p>
+                
             </form>
         )
     }
