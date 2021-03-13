@@ -8,8 +8,8 @@ function Welcome() {
         <div>
             <NavBarWelcome />
             <Jumbotron />
-            <LogIn />
             <h1>Welcome</h1>
+            <LogIn />
         </div>
     );
 };
