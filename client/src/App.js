@@ -5,6 +5,7 @@ import Welcome from "./pages/Welcome";
 import Member from "./pages/Member";
 import NoMatch from "./pages/NoMatch";
 import Footer from "./components/Footer";
+import SignUp from "./pages/Signup";
 import Profile from "./components/Profile";
 
 function App() {
@@ -15,14 +16,15 @@ function App() {
           <Route exact path={["/", "/welcome"]}>
             <Welcome />
           </Route>
-
+          <Route exact path={["/signup"]}>
+            <SignUp />
+          </Route>
           <Route exact path={["/member"]}>
             <Member />
           </Route>
           <Route exact path={["/member/profile"]}>
             <Profile />
           </Route>
-          
           <Route component={NoMatch} />
         </Switch>
         <Footer />

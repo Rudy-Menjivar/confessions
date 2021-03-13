@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 
+
 function NavBarWelcome() {
     return (
         <Navbar bg="light" expand="lg">
