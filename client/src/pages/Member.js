@@ -1,11 +1,12 @@
 import React from "react";
 import NavBarMember from "../components/NavBarMember";
+import LogIn from "../components/LogIn"
 
 function Member() {
     return (
         <div>
             <NavBarMember />
-            <h1>Member</h1>
+            <LogIn />
         </div>
     );
 };
