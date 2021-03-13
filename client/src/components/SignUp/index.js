@@ -1,30 +1,32 @@
-import React, { Component } from "react";
+import React from "react";
 import "./style.css";
+import Form from "react-bootstrap/Form"
 
-export default class SignUp extends Component {
-    render() {
+
+function SignUp (){ 
+
         return (
-            <form>
-                <h2>Sign Up</h2>
+            <Form>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Please enter your email" />
+                    <Form.Text className="text-muted">
+                        We'll never share your email with anyone else
+                    </Form.Text>
+                </Form.Group>
 
-                <div className="form-group">
-                    <label>Nickname</label>
-                    <input type="text" className="form-control" placeholder="Nickname" />
-                </div>
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
 
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type= "email" className="form-control" placeholder="Enter email" />
-                </div>
+                <Form.Group controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                
-            </form>
+                <Button variant="primary" type="submit">Submit</Button>
+            </Form>
         )
     }
-}
+
+export default SignUp
