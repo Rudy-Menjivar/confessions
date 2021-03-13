@@ -3,9 +3,10 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Member from "./pages/Member";
+import NoMatch from "./pages/NoMatch";
 import Footer from "./components/Footer";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import SignUp from "./pages/Signup";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -15,12 +16,16 @@ function App() {
           <Route exact path={["/", "/welcome"]}>
             <Welcome />
           </Route>
-          <Route exact path={["/member"]}>
-            <Member />
-          </Route>
           <Route exact path={["/signup"]}>
             <SignUp />
           </Route>
+          <Route exact path={["/member"]}>
+            <Member />
+          </Route>
+          <Route exact path={["/member/profile"]}>
+            <Profile />
+          </Route>
+          <Route component={NoMatch} />
         </Switch>
         <Footer />
       </div>
