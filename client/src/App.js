@@ -5,6 +5,7 @@ import Welcome from "./pages/Welcome";
 import Member from "./pages/Member";
 import Footer from "./components/Footer";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import SignUp from "./pages/Signup";
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
           <Route exact path={["/member"]}>
             <Member />
           </Route>
-          <Route path="/sign-up" component={SignUp} />
+          <Route exact path={["/signup"]}>
+            <SignUp />
+          </Route>
         </Switch>
         <Footer />
       </div>
