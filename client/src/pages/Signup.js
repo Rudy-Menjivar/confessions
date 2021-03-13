@@ -7,7 +7,6 @@ function Signuppage() {
         <div>
             <NavBarWelcome />
             <SignUp />
-            <h1>Sign Up</h1>
         </div>
     );
 };
