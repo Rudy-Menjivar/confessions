@@ -4,8 +4,10 @@ const Schema = mongoose.Schema;
 const confessionSchema = new Schema({
     title: {type: String, required: true },
     content: {type: String, required: true},
-    user: { type: String, required: true },
-    category: String,
+    likes: { type: Number },
+    comment: Array,
+    category: Array,
+    reported: { type: Boolean, default: false },
     date: { type: Date, default: Date.now }
 });
 

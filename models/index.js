@@ -1,3 +1,5 @@
 module.exports = {
-    Confession: require("./confession")
+    Confession: require("./confession"),
+    User: require("./user"),
+    Categories: require("./categories")
 };
