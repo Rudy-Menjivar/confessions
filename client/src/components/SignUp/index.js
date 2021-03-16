@@ -23,7 +23,7 @@ function SignUp() {
                 <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
 
-            <Button variant="primary" type="submit">Submit</Button>
+            <Button type="submit">Submit</Button>
         </Form>
     );
 };
