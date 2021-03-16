@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import ProfileInfo from "../ProfileInfo";
 import PostCreateBox from "../PostCreateBox";
 import PostCard from "../PostCard";
+import DeleteButton from "../ButtonDelete";
 
 function Profile() {
     // Setting initial state of confession posts
@@ -16,18 +17,20 @@ function Profile() {
         loadConfessions()
     }, []);
 
-    // Load profile info for user who currently signed in
-    // function loadProfileInfo() {
-
-    // };
-
-    // Loads all confession posts and set them to confessions
+    // Load all confession posts and set them to confessions
     function loadConfessions() {
         API.getConfessions()
             .then(res =>
                 setConfessions(res.data)
             )
             .catch(err => console.log(err));
+    };
+
+    // Delete a confession post from database with a given id, and reload confession posts from db
+    function deleteOneConfession(id) {
+        API.deleteConfession(id)
+        .then(res => loadConfessions())
+        .catch(err => console.log(err));
     };
 
     return (
@@ -44,7 +47,7 @@ function Profile() {
                         {post.content}
                     </ProfileInfo>
                 ))}
-            </section> */}
+                </section> */}
                 <section>
                     <PostCreateBox />
                 </section>
@@ -58,7 +61,7 @@ function Profile() {
                                         Edit
                                     </button>
                                     <button>
-                                        Delete
+                                        <DeleteButton onClick={() => deleteOneConfession(post._id)} />
                                     </button>
                                 </PostCard>
                             ))}
