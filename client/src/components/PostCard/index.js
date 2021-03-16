@@ -3,9 +3,9 @@ import "./style.css";
 
 function PostCard({ children }) {
     return (
-        <div className="postCard">
-            {children}
-        </div>
+            <div className="postCard">
+                {children}
+            </div>
     );
 };
 
