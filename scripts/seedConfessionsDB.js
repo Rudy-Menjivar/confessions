@@ -9,30 +9,30 @@ const confessionSeed = [
 {
     title: "I skipped the gym",
     content: "And ate chocolate with ice cream",
-    user: "gymLover101",
     category: "Gym",
-    date: new Date(Date.now())
+    likes: 3,
+    reported: false
 },
 {
     title: "I cheated in school",
     content: "lorem Ipsum is Lorem Ipsum is crae cray",
-    user: "collegeKid101",
     category: "School",
-    date: new Date(Date.now())
+    likes: 2,
+    reported: false
 },
 {
     title: "I lied to my mom",
     content: "I think she knows!",
-    user: "badKid101",
     category: "Lies",
-    date: new Date(Date.now())
+    likes: 5,
+    reported: false
 },
 {
     title: "I skipped class",
     content: "And watched a movie",
-    user: "harvardBound101",
     category: "School",
-    date: new Date(Date.now())
+    likes: 0,
+    reported: false
 }
 ];
 
