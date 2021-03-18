@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const confessionController = require("../../controllers/confessionController");
 
-// Matches with "/api/member/profile"
+// Matches with "/api/profile"
 router.route("/")
     .get(confessionController.findAll)
     .post(confessionController.create);

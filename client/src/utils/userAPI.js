@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export default {
-    getSignup: function() {
-        return axios.get("/api/signup");
+    Signup: function(userData) {
+        return axios.post("/api/signup", userData);
     }
 }

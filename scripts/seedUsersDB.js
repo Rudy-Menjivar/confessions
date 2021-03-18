@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 // next two lines load dot env variables (only needed for dev)
-const dotenv = require("dotenv")
-dotenv.config({ path: "./config/config.env" })
+//const dotenv = require("dotenv")
+//dotenv.config({ path: "./config/config.env" })
 
 const connectDB = async () => {
   try {
