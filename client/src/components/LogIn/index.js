@@ -6,9 +6,9 @@ import Button from "react-bootstrap/Button";
 function LogIn() {
     return (
         <Form>
-            <Form.Group controlId="formGroupEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+            <Form.Group controlId="formGroupUsername">
+                <Form.Label>Username</Form.Label>
+                <Form.Control type="username" placeholder="Username" />
             </Form.Group>
             <Form.Group controlId="formGroupPassword">
                 <Form.Label>Password</Form.Label>
