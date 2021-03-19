@@ -1,0 +1,14 @@
+.newsfeed-card {
+    border: solid 1px;
+    margin: 30px;
+    margin-bottom: 100px;
+}
+
+.post-owner, 
+.newsfeed-posts, 
+.reaction-box, 
+.comments,  
+.comment-box {
+    border: solid 1px;
+    margin: 10px;
+}
