@@ -2,9 +2,9 @@ import React from "react";
 
 function DeleteButton(props) {
     return (
-        <div>
+        <button>
             <span {...props} role="button">Delete</span>
-        </div>
+        </button>
     );
 };
 

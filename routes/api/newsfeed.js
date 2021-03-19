@@ -1,12 +1,12 @@
 const router = require("express").Router();
 const confessionController = require("../../controllers/confessionController");
 
-// Matches with "/api/profile"
+// Matches with "/api/newsfeed"
 router.route("/")
     .get(confessionController.findAll)
     .post(confessionController.create);
 
-// Matches with "/api/profile/:id"
+// Matches with "/api/newsfeed/:id"
 router.route("/:id")
     .get(confessionController.findById)
     .put(confessionController.update)

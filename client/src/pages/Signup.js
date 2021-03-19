@@ -6,9 +6,12 @@ function Signuppage() {
     return (
         <div>
             <NavBarWelcome />
-            <SignUp />
+            <SignUp
+            />
+
         </div>
     );
 };
+
 
 export default Signuppage;

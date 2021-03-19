@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import NavBarMember from "../NavBarMember";
-import API from "../../utils/API";
+import API from "../../utils/profileAPI";
 import ProfileInfo from "../ProfileInfo";
 import PostCreateBox from "../PostCreateBox";
 import PostCard from "../PostCard";
+import LikeButton from "../ButtonLike";
+import DislikeButton from "../ButtonDislike";
+import EditButton from "../ButtonEdit";
 import DeleteButton from "../ButtonDelete";
 
 function Profile() {
     // Setting initial state of confession posts
-    // const [profileInfo, setProfileInfo] = useState([]);
-    const [posts, setConfessions] = useState([]);
+    const [posts, setPosts] = useState([]);
 
     // Load all confessions and store them with setConfessions
     useEffect(() => {
-        loadConfessions()
+        loadPosts();
     }, []);
 
     // Load all confession posts and set them to confessions
-    function loadConfessions() {
+    function loadPosts() {
         API.getConfessions()
             .then(res =>
-                setConfessions(res.data)
+                setPosts(res.data)
             )
             .catch(err => console.log(err));
     };
@@ -29,7 +31,7 @@ function Profile() {
     // Delete a confession post from database with a given id, and reload confession posts from db
     function deleteOneConfession(id) {
         API.deleteConfession(id)
-        .then(res => loadConfessions())
+        .then(res => loadPosts())
         .catch(err => console.log(err));
     };
 
@@ -41,13 +43,6 @@ function Profile() {
                 <section>
                     <ProfileInfo />
                 </section>
-                {/* <section>
-                {posts.map(post => (
-                    <ProfileInfo key={post._id}>
-                        {post.content}
-                    </ProfileInfo>
-                ))}
-                </section> */}
                 <section>
                     <PostCreateBox />
                 </section>
@@ -57,12 +52,10 @@ function Profile() {
                             {posts.map(post => (
                                 <PostCard key={post._id}>
                                     <p>{post.content}</p>
-                                    <button>
-                                        Edit
-                                    </button>
-                                    <button>
-                                        <DeleteButton onClick={() => deleteOneConfession(post._id)} />
-                                    </button>
+                                    <LikeButton><span>Likes: {post.likes}</span></LikeButton>
+                                    <DislikeButton><span>Dislikes: {post.dislikes}</span></DislikeButton>
+                                    <EditButton />
+                                    <DeleteButton onClick={() => deleteOneConfession(post._id)} />
                                 </PostCard>
                             ))}
                         </div>

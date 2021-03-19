@@ -5,8 +5,8 @@ const routes = require("./routes");
 const app = express();
 
 // next two lines load dot env variables (only needed for dev)
-const dotenv = require("dotenv")
-dotenv.config({ path: "./config/config.env" })
+//  const dotenv = require("dotenv")
+//  dotenv.config({ path: "./config/config.env" })
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here

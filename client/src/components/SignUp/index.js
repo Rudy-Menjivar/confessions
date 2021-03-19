@@ -1,9 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import API from "../../utils/userAPI.js";
 
 function SignUp() {
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSignupForm = (event) => {
+        event.preventDefault();
+        if(username && password) {
+            API.Signup({
+                username,
+                password
+            })
+               .catch(err => console.log(err));
+        }
+    };
+
+    const updateUsername = (event) => {
+        setUsername(event.target.value);
+    }
+
+    const updatePassword = (event) => {
+        setPassword(event.target.value);
+    }
+
     return (
         <Form>
             <Form.Group controlId="formBasicEmail">
@@ -13,17 +37,13 @@ function SignUp() {
                     We'll never share your email with anyone else
                 </Form.Text>
             </Form.Group>
-
+            <Form.Label>Username</Form.Label>
+            <Form.Control onChange={(e) => updateUsername(e)} type="username" placeholder="Please enter your username" />
             <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control onChange={(e) => updatePassword(e)} type="password" placeholder="Password" />
             </Form.Group>
-
-            <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-
-            <Button type="submit">Submit</Button>
+            <Button onClick={handleSignupForm} variant="primary" type="submit">Submit</Button>
         </Form>
     );
 };
