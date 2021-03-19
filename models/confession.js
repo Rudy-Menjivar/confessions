@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 const confessionSchema = new Schema({
     title: {type: String, required: true },
     content: {type: String, required: true},
-    likes: { type: Number },
-    dislikes: { type: Number },
+    likes: { type: Number, default: 0 },
+    dislikes: { type: Number, default: 0 },
     comment: Array,
     category: Array,
     reported: { type: Boolean, default: false },
