@@ -7,17 +7,17 @@ const db = require("../models");
 
 const connectDB = async () => {
   try {
-    const conn = await 
-    mongoose.connect(process.env.MONGO_URI || 
-      "mongodb://localhost/confessions", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-    });
+    const conn = await
+      mongoose.connect(process.env.MONGO_URI ||
+        "mongodb://localhost/confessions", {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+      });
     console.log(`Seed records sent to: ${conn.connection.host}`)
   } catch (err) {
-      console.error(err)
-      process.exit(1)
+    console.error(err)
+    process.exit(1)
   };
 };
 
@@ -29,6 +29,7 @@ const confessionSeed = [
     content: "I never worked out and instead destroyed the pizza, as well as the salted caramel chocolate ice cream",
     category: "Gym",
     likes: 3,
+    dislikes: 0,
     reported: false
   },
   {
@@ -36,6 +37,7 @@ const confessionSeed = [
     content: "lorem Ipsum is Lorem Ipsum is crae cray",
     category: "School",
     likes: 2,
+    dislikes: 1,
     reported: false
   },
   {
@@ -43,13 +45,15 @@ const confessionSeed = [
     content: "I ate the entire costco bag of cheetos and I think she knows!",
     category: "Lies",
     likes: 5,
+    dislikes: 1,
     reported: false
   },
-{
+  {
     title: "I skipped class",
     content: "I skipped on the project to watch a movie, go shopping and binge watch some more..",
     category: "School",
     likes: 0,
+    dislikes: 0,
     reported: false
   }
 ];

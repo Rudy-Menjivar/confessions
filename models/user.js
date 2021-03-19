@@ -5,7 +5,10 @@ const bcrypt = require("bcrypt");
 const userSchema = new Schema({
   username: { type: String, required: true },
   password: { type: String, required: true },
-  confession: { type: Array },
+  confession: [{ 
+    type: Schema.Types.ObjectId,  
+    ref: "Confessions"
+  }],
   date: { type: Date, default: Date.now }
 });
 

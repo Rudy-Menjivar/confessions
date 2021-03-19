@@ -7,6 +7,7 @@ import NoMatch from "./pages/NoMatch";
 import Footer from "./components/Footer";
 import SignUp from "./pages/Signup";
 import Profile from "./components/Profile";
+import NewsFeed from "./components/NewsFeed";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route exact path={["/member/profile"]}>
             <Profile />
+          </Route>
+          <Route exact path={["/member/newsfeed"]}>
+            <NewsFeed />
           </Route>
           <Route component={NoMatch} />
         </Switch>
