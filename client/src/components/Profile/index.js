@@ -53,6 +53,7 @@ function Profile() {
                             {posts.map(post => (
                                 <PostCard key={post._id}>
                                     <p><strong>Username:  </strong></p>
+                                    <h5>{post.title}</h5>
                                     <p>{post.content}</p>
                                     <LikeButton
                                         className="like"
