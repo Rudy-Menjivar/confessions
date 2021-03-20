@@ -9,6 +9,7 @@ import LikeButton from "../ButtonLike";
 import DislikeButton from "../ButtonDislike";
 import EditButton from "../ButtonEdit";
 import DeleteButton from "../ButtonDelete";
+import CreateCommentBox from "../CommentBox";
 
 function Profile() {
     // Setting initial state of confession posts
@@ -57,6 +58,7 @@ function Profile() {
                                     <DislikeButton><span>Dislikes: {post.dislikes}</span></DislikeButton>
                                     <EditButton />
                                     <DeleteButton onClick={() => deleteOneConfession(post._id)} />
+                                    <CreateCommentBox onClick={() => CreateCommentBox()}></CreateCommentBox>
                                 </PostCard>
                             ))}
                         </div>
