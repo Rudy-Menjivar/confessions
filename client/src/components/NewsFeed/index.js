@@ -4,14 +4,12 @@ import API from "../../utils/newsfeedAPI";
 import NavBarMember from "../NavBarMember";
 import NewsFeedCard from "../NewsFeedCard";
 import LikeButton from "../ButtonLike";
-import DislikeButton from "../ButtonLike";
-import ReportButton from "../ButtonLike";
+import DislikeButton from "../ButtonDislike";
+import ReportButton from "../ButtonReport";
 
 function NewsFeed() {
     // Setting initial state of confession posts by all users
     const [confessions, setConfessions] = useState([]);
-    // Setting initial state of likes when all confesion posts loaded
-    // const [likes, setLikes] = useState("");
 
     // Load all confessions and store them with setConfessions
     useEffect(() => {
@@ -23,18 +21,6 @@ function NewsFeed() {
         API.getConfessions()
             .then(res => {
                 setConfessions(res.data)
-            })
-            .catch(err => console.log(err));
-    };
-
-    // Load likes for each confession posts
-    function handleLikeClickEvent(id) {
-        // e.preventDefault();
-        console.log("clicked " + this);
-        // setLikes(e.target.value);
-        API.updateConfession(id)
-            .then(res => {
-                loadConfessions();
             })
             .catch(err => console.log(err));
     };
@@ -55,7 +41,12 @@ function NewsFeed() {
                                     <p>{confession.content}</p>
                                 </div>
                                 <div className="reaction-box">
-                                    <LikeButton className="like" onClick={() => handleLikeClickEvent(confession.liles + 1)}><span>Likes: {confession.likes}</span></LikeButton>
+                                    <LikeButton
+                                        className="like"
+                                        id={confession._id}
+                                        value={confession.likes}
+                                        loadConfessions={loadConfessions}
+                                    />
                                     <DislikeButton className="dislike"><span>Dislikes: {confession.dislikes}</span></DislikeButton>
                                     <ReportButton className="report"><span>Report!</span></ReportButton>
                                 </div>
