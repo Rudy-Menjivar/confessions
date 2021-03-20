@@ -18,7 +18,7 @@ export default {
     return axios.post("/api/profile", confessionData);
   },
   // Update a confession post with a given id
-  updateConfession: function (id) {
-    return axios.put("/api/profile/" + id);
+  updateConfession: function (id, body) {
+    return axios.put("/api/profile/" + id, body);
   }
 };
