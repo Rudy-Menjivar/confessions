@@ -32,8 +32,8 @@ function Profile() {
     // Delete a confession post from database with a given id, and reload confession posts from db
     function deleteOneConfession(id) {
         API.deleteConfession(id)
-        .then(res => loadPosts())
-        .catch(err => console.log(err));
+            .then(res => loadPosts())
+            .catch(err => console.log(err));
     };
 
     return (
@@ -54,7 +54,12 @@ function Profile() {
                                 <PostCard key={post._id}>
                                     <p><strong>Username:  </strong></p>
                                     <p>{post.content}</p>
-                                    <LikeButton><span>Likes: {post.likes}</span></LikeButton>
+                                    <LikeButton
+                                        className="like"
+                                        id={post._id}
+                                        value={post.likes}
+                                        loadConfessions={loadPosts}
+                                    />
                                     <DislikeButton><span>Dislikes: {post.dislikes}</span></DislikeButton>
                                     <EditButton />
                                     <DeleteButton onClick={() => deleteOneConfession(post._id)} />
