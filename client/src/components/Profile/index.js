@@ -51,6 +51,7 @@ function Profile() {
                         <div>
                             {posts.map(post => (
                                 <PostCard key={post._id}>
+                                    <p><strong>Username: </strong></p>
                                     <p>{post.content}</p>
                                     <LikeButton><span>Likes: {post.likes}</span></LikeButton>
                                     <DislikeButton><span>Dislikes: {post.dislikes}</span></DislikeButton>
