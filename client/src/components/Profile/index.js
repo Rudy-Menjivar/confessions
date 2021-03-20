@@ -60,7 +60,12 @@ function Profile() {
                                         value={post.likes}
                                         loadConfessions={loadPosts}
                                     />
-                                    <DislikeButton><span>Dislikes: {post.dislikes}</span></DislikeButton>
+                                    <DislikeButton
+                                        className="dislike"
+                                        id={post._id}
+                                        value={post.dislikes}
+                                        loadConfessions={loadPosts}
+                                    />
                                     <EditButton />
                                     <DeleteButton onClick={() => deleteOneConfession(post._id)} />
                                     <CreateCommentBox onClick={() => CreateCommentBox()}></CreateCommentBox>
