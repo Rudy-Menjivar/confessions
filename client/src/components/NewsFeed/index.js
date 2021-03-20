@@ -47,7 +47,12 @@ function NewsFeed() {
                                         value={confession.likes}
                                         loadConfessions={loadConfessions}
                                     />
-                                    <DislikeButton className="dislike"><span>Dislikes: {confession.dislikes}</span></DislikeButton>
+                                    <DislikeButton
+                                        className="dislike"
+                                        id={confession._id}
+                                        value={confession.dislikes}
+                                        loadConfessions={loadConfessions}
+                                    />
                                     <ReportButton className="report"><span>Report!</span></ReportButton>
                                 </div>
                                 <div className="comment-box">
