@@ -53,7 +53,12 @@ function NewsFeed() {
                                         value={confession.dislikes}
                                         loadConfessions={loadConfessions}
                                     />
-                                    <ReportButton className="report"><span>Report!</span></ReportButton>
+                                    <ReportButton 
+                                        className="report"
+                                        id={confession._id}
+                                        value={confession.reported}
+                                        loadConfessions={loadConfessions}
+                                    />
                                 </div>
                                 <div className="comment-box">
                                     <span className="comments">Comments: </span>
