@@ -10,7 +10,7 @@ function NavBarWelcome() {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     <NavDropdown.Divider />
-                    <Nav.Link href="/member">Log in</Nav.Link>
+                    <Nav.Link href="/login">Log in</Nav.Link>
                     <NavDropdown.Divider />
                     <Nav.Link href="/signup">Sign up</Nav.Link>
                     <NavDropdown.Divider />
