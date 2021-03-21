@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -12,10 +12,10 @@ function Login() {
   const handleLoginForm = (event) => {
     event.preventDefault();
     if (username && password) {
-        API.Login({
-          username,
-          password
-        })
+      API.Login({
+        username,
+        password
+      })
         .catch(err => console.log(err));
     }
   };
@@ -25,17 +25,17 @@ function Login() {
   const updatePassword = (event) => {
     setPassword(event.target.value);
   };
-  
+
   return (
     <div>
-      <Form 
+      <Form
         className="login-form"
       >
         <Form.Group controlId="formGroupUsername">
           <Form.Label>
             Username
           </Form.Label>
-          <Form.Control 
+          <Form.Control
             name="username"
             type="text"
             autoComplete="username"
@@ -47,7 +47,7 @@ function Login() {
           <Form.Label>
             Password
           </Form.Label>
-          <Form.Control 
+          <Form.Control
             name="password"
             type="password"
             autoComplete="current-password"
@@ -55,7 +55,7 @@ function Login() {
             onChange={(e) => updatePassword(e)}
           />
         </Form.Group>
-        <Button 
+        <Button
           onClick={handleLoginForm}
           type="submit"
         >
