@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 
 function LogIn() {
     return (
-        <Form>
+        <Form className="login-form">
             <Form.Group controlId="formGroupUsername">
                 <Form.Label>Username</Form.Label>
                 <Form.Control type="username" placeholder="Username" />
@@ -21,4 +21,4 @@ function LogIn() {
     );
 };
 
-export default LogIn
+export default LogIn;
