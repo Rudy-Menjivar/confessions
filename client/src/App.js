@@ -5,6 +5,7 @@ import Welcome from "./pages/Welcome";
 import Member from "./pages/Member";
 import NoMatch from "./pages/NoMatch";
 import Footer from "./components/Footer";
+import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Profile from "./components/Profile";
 import NewsFeed from "./components/NewsFeed";
@@ -16,6 +17,9 @@ function App() {
         <Switch>
           <Route exact path={["/", "/welcome"]}>
             <Welcome />
+          </Route>
+          <Route exact path={["/login"]}>
+            <Login />
           </Route>
           <Route exact path={["/signup"]}>
             <SignUp />
