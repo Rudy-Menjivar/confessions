@@ -16,9 +16,13 @@ function Login() {
           username,
           password
         })
+        .then(res => {
+          console.log(res)
+        })
         .catch(err => console.log(err));
     }
   };
+  
   const updateUsername = (event) => {
     setUsername(event.target.value);
   };
