@@ -1,4 +1,14 @@
-.login-form {
-    margin: 50px;
-    margin: 100px;
+.form-group {
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+.h1,
+h1 {
+  text-align: center;
+}
+
+.btn {
+  margin-left: 500px;
+  margin-right: 500px;
 }
