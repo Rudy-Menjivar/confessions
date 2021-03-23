@@ -37,10 +37,10 @@ function Profile() {
     };
 
     return (
-        <div>
-            <NavBarMember />
+        <div className="profileback">
+            <NavBarMember/>
+            <h1><strong>My Confessions</strong></h1>
             <div className="profile-container">
-                <h1>This page is private to you</h1>
                 <section>
                     <ProfileInfo />
                 </section>
@@ -52,8 +52,7 @@ function Profile() {
                         <div>
                             {posts.map(post => (
                                 <PostCard key={post._id}>
-                                    <p><strong>Username:  </strong></p>
-                                    <h5>{post.title}</h5>
+                                    <h5><strong>{post.title}</strong></h5>
                                     <p>{post.content}</p>
                                     <LikeButton
                                         className="like"
@@ -69,7 +68,7 @@ function Profile() {
                                     />
                                     <EditButton />
                                     <DeleteButton onClick={() => deleteOneConfession(post._id)} />
-                                    <CreateCommentBox onClick={() => CreateCommentBox()} id={post._id}>Comments: {post.comments}</CreateCommentBox>
+                                    <CreateCommentBox className="comment" onClick={() => CreateCommentBox()} id={post._id}>Comments: {post.comments}</CreateCommentBox>
                                 </PostCard>
                             ))}
                         </div>

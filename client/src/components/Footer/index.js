@@ -4,7 +4,7 @@ import "./style.css";
 function Footer() {
     return (
         <footer className="footer">
-            <span>Lorum Ipsum</span>
+            <span>MIT LICENSE || Copyright 2021</span>
         </footer>
     );
 }

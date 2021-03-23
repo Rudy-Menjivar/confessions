@@ -38,7 +38,7 @@ function CreateCommentBox(props) {
         API.getConfession(props.id)
             .then(res => {
                 console.log(res.data)
-                setComments(res.data.comment)
+                setNewComment(res.data.newcomments)
             })
             .catch(err => console.log(err));
     };
@@ -47,11 +47,11 @@ function CreateCommentBox(props) {
         <div className="CreateCommentBox">
             {comments.map((comment, i) => <p key={`comment${i}`}>{comment}</p>)}
             <Form>
-                <Form.Group controlId="formBasicComment">
+                <Form.Group className="comment" ccontrolId="formBasicComment">
                     <Form.Label>Comment:</Form.Label>
-                    <Form.Control onChange={(e) => updateComments(e)} as="textarea" rows={2} placeholder="Leave a comment." value={newComment} />
+                    <Form.Control className="commenttext" onChange={(e) => updateComments(e)} as="textarea" rows={2} placeholder="Leave a comment." value={newComment} />
                 </Form.Group>
-                <Button onClick={handleCommentsForm} variant="primary" type="submit">
+                <Button className="commentButton" onClick={handleCommentsForm} variant="dark" type="submit">
                     Submit Comment
                 </Button>
             </Form>

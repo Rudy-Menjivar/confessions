@@ -1,4 +1,12 @@
 .profileInfo-container {
-    border: solid 1px;
+    border: solid 2px;
     margin: 30px;
+    border-color: gray;
 }
+p {
+    margin: 10px;
+    color: gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+

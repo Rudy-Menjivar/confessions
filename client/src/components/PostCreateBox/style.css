@@ -1,4 +1,41 @@
 .PostCreateBox {
-    border: solid 1px;
+    border: solid 2px;
     margin: 30px;
+    border-color: gray;
+    font-size: larger;
+}
+
+.header {
+    text-align: left;
+    color: gray;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+}
+
+.details {
+    color: gray;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+    margin: 0 40px 0 10px;
+    align-self: left;
+}
+
+.post-button {
+    color: rgb(50, 48, 56);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 10px;
+}
+
+.newc {
+    color: gray;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+}
+
+.box {
+    margin: 0;
+}
+
+.headerbox {
+    margin: 30px, 0, 30px, 0;
 }
