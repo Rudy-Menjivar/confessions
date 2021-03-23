@@ -10,8 +10,6 @@ const passport = require("passport");
 //  dotenv.config({ path: "./config/config.env" })
 const PORT = process.env.PORT || 3001;
 
-const secureRoute = require('./routes/secure-routes');
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -29,8 +27,10 @@ require("./config/passport");
 // Add routes, both API and view
 app.use(routes);
 
+const secureRoute = require('./routes/secure-routes');
+
 // Plug in the JWT strategy as a middleware so only verified users can access this route.
-app.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);
+app.use('/api', passport.authenticate('jwt', { session: false }), secureRoute);
 
 // Connect to the Mongo DB
 const connectDB = async () => {
@@ -41,6 +41,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
+      useCreateIndex: true,
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`)
   } catch (err) {
