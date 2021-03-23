@@ -17,7 +17,8 @@ function Login() {
           password
         })
         .then(res => {
-          console.log(res)
+          const token = res.data.token;
+          console.log("token " + token)
         })
         .catch(err => console.log(err));
     }
