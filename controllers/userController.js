@@ -16,6 +16,15 @@ module.exports = {
         .then(dbOneUser => res.json(dbOneUser))
         .catch(err => res.status(422).json(err));
     },
+    findByUsername: function (req, res) {
+        db.User
+        .find({username: JSON.parse(req.query.data).username})
+        .then(dbOneUser => {
+            console.log(dbOneUser)
+            res.json(dbOneUser)
+        })
+        .catch(err => res.status(422).json(err));
+    },
     create: function (req, res) {
         db.User
         .create(req.body)
