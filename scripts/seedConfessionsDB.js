@@ -30,6 +30,7 @@ const confessionSeed = [
     category: "Gym",
     likes: 3,
     dislikes: 0,
+    comments: ["I like pizza too.", ""],
     reported: false
   },
   {

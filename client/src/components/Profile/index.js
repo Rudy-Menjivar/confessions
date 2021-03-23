@@ -69,7 +69,7 @@ function Profile() {
                                     />
                                     <EditButton />
                                     <DeleteButton onClick={() => deleteOneConfession(post._id)} />
-                                    <CreateCommentBox onClick={() => CreateCommentBox()}></CreateCommentBox>
+                                    <CreateCommentBox onClick={() => CreateCommentBox()} id={post._id}>Comments: {post.comments}</CreateCommentBox>
                                 </PostCard>
                             ))}
                         </div>
