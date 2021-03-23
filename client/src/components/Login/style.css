@@ -1,6 +1,6 @@
 .form-group {
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 .h1,
@@ -9,6 +9,5 @@ h1 {
 }
 
 .btn {
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: 30%;
 }
