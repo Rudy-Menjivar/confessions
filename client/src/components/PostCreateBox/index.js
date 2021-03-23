@@ -32,19 +32,19 @@ function PostCreateBox() {
     return (
         <div className="PostCreateBox">
             <Form>
-                <Form.Label>New confession: </Form.Label>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Header: </Form.Label>
-                    <Form.Control onChange={(event) => updateTitle(event)} type="email" placeholder="A short summary of what your confession is about." />
+                <Form.Label className="newc"><strong>New confession: </strong></Form.Label>
+                <Form.Group className="box" controlId="formBasicEmail">
+                    <Form.Label className="header">Header: </Form.Label>
+                    <Form.Control className="headerbox" onChange={(event) => updateTitle(event)} type="email" placeholder="A short summary of what your confession is about." />
                 </Form.Group>
 
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Details: </Form.Label>
-                        <Form.Control onChange={(event) => updateContent(event)}  as="textarea" rows={3} placeholder="What's on your mind?"/>
+                <Form.Group className="details" controlId="formBasicPassword">
+                    <Form.Group className="details" controlId="exampleForm.ControlTextarea1">
+                        <Form.Label className="details">Details: </Form.Label>
+                        <Form.Control className="details" onChange={(event) => updateContent(event)}  as="textarea" rows={3} placeholder="What's on your mind?"/>
                     </Form.Group>
                 </Form.Group>
-                <Button onClick={handleCreateConfessionForm} variant="primary" type="submit">
+                <Button className="post-button" onClick={handleCreateConfessionForm} variant="dark" type="submit">
                     Post
                 </Button>
             </Form>

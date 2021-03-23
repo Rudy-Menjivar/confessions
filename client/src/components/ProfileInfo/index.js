@@ -4,8 +4,8 @@ import "./style.css";
 function ProfileInfo(props) {
     return (
         <div className="profileInfo-container">
-            <p>Username: {props.user}</p>
-            <p>Info: (...)</p>
+            <p><strong>Username: {props.user}</strong></p>
+            <p><strong>Info: (...)</strong></p>
         </div>
     );
 };

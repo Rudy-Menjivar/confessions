@@ -1,4 +1,9 @@
 .postCard {
-    border: solid 1px;
+    border: solid 2px;
     margin: 30px;
+    border-color: gray;
+    color: gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: linear-gradient(white);
 }
+
