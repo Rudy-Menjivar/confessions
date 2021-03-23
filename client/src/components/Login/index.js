@@ -16,9 +16,14 @@ function Login() {
           username,
           password
         })
+        .then(res => {
+          const token = res.data.token;
+          console.log("token " + token)
+        })
         .catch(err => console.log(err));
     }
   };
+  
   const updateUsername = (event) => {
     setUsername(event.target.value);
   };
