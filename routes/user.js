@@ -6,38 +6,42 @@ const jwt = require("jsonwebtoken");
 router.post(
   "/login",
   async (req, res, next) => {
-    passport.authenticate(
-      "login",
-      async (err, user) => {
-        try {
-          if (err || !user) {
-            const error = new Error("An error occurred.");
+      passport.authenticate(
+          "local", { session: false },
+          async (err, user, info) => {
+              console.log("user:", user)
+              try {
+              if (err || !user) {
+                  return next(err);
+              }
+              console.log(user, info, "test");
 
-            return next(error);
+              req.login(
+                  user,
+                  { session: true },
+                  async (error) => {
+                      if (error) {
+                          return next(error);
+                      }
+                      const payload = {
+                          _id: user._id,
+                          username: user.username
+                      }
+                      const options = {
+                          subject: `${user.id}`,
+                          expiresIn: 3600
+                      }
+                      const token = jwt.sign({ user: payload }, 'TOP_SECRET', options);
+                      console.log(token)
+                      return res.json({ token });
+                  }
+              );
+
+          } catch (err) {
+              return err;
           }
-
-          req.login(
-            user,
-            { session: false },
-            async (error) => {
-              if (error) return next(error);
-
-              const body = { 
-                _id: user._id, 
-                username: user.username 
-              };
-              const token = jwt.sign({ 
-                user: body 
-              }, "TOP_SECRET");
-
-              return res.json({ token });
-            }
-          );
-        } catch (error) {
-          return next(error);
-        }
       }
-    ) (req, res, next);
+  )(req, res, next);
   }
 );
 

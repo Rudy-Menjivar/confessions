@@ -21,17 +21,16 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 };
 
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require("./config/passport");
 // Add routes, both API and view
 app.use(routes);
 
 // Plug in the JWT strategy as a middleware so only verified users can access this route.
 app.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);
-
-// Passport Middleware
-app.use(passport.initialize());
-app.use(passport.session());
-
-require("./controllers/passport");
 
 // Connect to the Mongo DB
 const connectDB = async () => {
