@@ -1,13 +1,9 @@
 const express = require("express");
 const path = require("path");
-const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const passport = require("passport");
-
-// next two lines load dot env variables (only needed for dev)
-//  const dotenv = require("dotenv")
-//  dotenv.config({ path: "./config/config.env" })
+const connectDB = require("./config/connectDB")
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -31,24 +27,6 @@ const secureRoute = require('./routes/secure-routes');
 
 // Plug in the JWT strategy as a middleware so only verified users can access this route.
 app.use('/api', passport.authenticate('jwt', { session: false }), secureRoute);
-
-// Connect to the Mongo DB
-const connectDB = async () => {
-  try {
-    const conn = 
-    await mongoose.connect(process.env.MONGO_URI || 
-      "mongodb://localhost/confessions", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
-    });
-    console.log(`MongoDB Connected: ${conn.connection.host}`)
-  } catch (err) {
-      console.error(err)
-      process.exit(1)
-  };
-};
 
 connectDB();
 

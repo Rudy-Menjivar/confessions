@@ -1,21 +1,5 @@
-const mongoose = require("mongoose");
 const db = require("../models");
-
-const connectDB = async () => {
-  try {
-    const conn = await 
-    mongoose.connect(process.env.MONGO_URI || 
-      "mongodb://localhost/confessions", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-    });
-    console.log(`Seed records sent to: ${conn.connection.host}`)
-  } catch (err) {
-      console.error(err)
-      process.exit(1)
-  };
-};
+const connectDB = require("../config/connectDB")
 
 connectDB();
 
