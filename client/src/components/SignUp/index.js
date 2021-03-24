@@ -12,7 +12,7 @@ function SignUp() {
     const handleSignupForm = (event) => {
         event.preventDefault();
         if (username && password) {
-            API.Signup({
+            API.signup({
                 username,
                 password
             })
