@@ -2,7 +2,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from "./pages/Welcome";
-import Member from "./pages/Member";
 import NoMatch from "./pages/NoMatch";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
@@ -24,13 +23,10 @@ function App() {
           <Route exact path={["/signup"]}>
             <SignUp />
           </Route>
-          <Route exact path={["/member"]}>
-            <Member />
-          </Route>
-          <Route exact path={["/member/profile"]}>
+          <Route exact path={["/profile"]}>
             <Profile />
           </Route>
-          <Route exact path={["/member/newsfeed"]}>
+          <Route exact path={["/newsfeed"]}>
             <NewsFeed />
           </Route>
           <Route component={NoMatch} />

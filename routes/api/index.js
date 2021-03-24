@@ -4,6 +4,8 @@ const profileRoutes = require("./profile");
 const newsfeedRoutes = require("./newsfeed");
 const loginRoutes = require("./login");
 
+// const isAuthenticated = require("../../config/middleware/isAuthenticated");
+
 // API routes
 
 // /api/profile
