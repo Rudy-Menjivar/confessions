@@ -9,9 +9,9 @@ function NavBarMember() {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     <NavDropdown.Divider />
-                    <Nav.Link href="/member/profile">Profile</Nav.Link>
+                    <Nav.Link href="/profile">Profile</Nav.Link>
                     <NavDropdown.Divider />
-                    <Nav.Link href="/member/newsfeed">News Feed</Nav.Link>
+                    <Nav.Link href="/newsfeed">News Feed</Nav.Link>
                     <NavDropdown.Divider />
                     <Nav.Link href="/welcome">Log out</Nav.Link>
                     <NavDropdown.Divider />
