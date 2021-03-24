@@ -6,6 +6,7 @@ import NewsFeedCard from "../NewsFeedCard";
 import LikeButton from "../ButtonLike";
 import DislikeButton from "../ButtonDislike";
 import ReportButton from "../ButtonReport";
+import CreateCommentBox from "../CommentBox";
 
 function NewsFeed() {
     // Setting initial state of confession posts by all users
@@ -26,7 +27,7 @@ function NewsFeed() {
     };
 
     return (
-        <div>
+        <div className="newsfeed-background">
             <NavBarMember />
             <h1>News Feed</h1>
             {confessions.length ? (
@@ -35,7 +36,7 @@ function NewsFeed() {
                         <NewsFeedCard key={confession._id}>
                             <div className="newsfeed-card">
                                 <div className="post-owner">
-                                    <span>Owner of this post: </span>
+                                    <h5>Username: </h5>
                                 </div>
                                 <div className="newsfeed-posts">
                                     <p>{confession.content}</p>
@@ -59,9 +60,11 @@ function NewsFeed() {
                                         value={confession.reported}
                                         loadConfessions={loadConfessions}
                                     />
-                                </div>
-                                <div className="comment-box">
-                                    <span className="comments">Comments: </span>
+                                    <CreateCommentBox
+                                        className="comment" 
+                                        onClick={() => CreateCommentBox()}
+                                        id={confession._id}>Comments: {confession.comments}
+                                        </CreateCommentBox>
                                 </div>
                             </div>
                         </NewsFeedCard>
