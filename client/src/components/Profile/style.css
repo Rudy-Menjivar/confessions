@@ -4,6 +4,8 @@
     margin-top: 10px;
     background-color: rgb(255, 255, 255);
     background-image: url(../../images/background1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 h1 {
     font-style: italic;
