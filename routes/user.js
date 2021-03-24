@@ -14,7 +14,6 @@ router.post(
               if (err || !user) {
                   return next(err);
               }
-              console.log(user, info, "test");
 
               req.login(
                   user,
@@ -25,7 +24,9 @@ router.post(
                       }
                       const payload = {
                           _id: user._id,
-                          username: user.username
+                          username: user.username,
+                          confession: user.confession,
+                          
                       }
                       const options = {
                           subject: `${user.id}`,
