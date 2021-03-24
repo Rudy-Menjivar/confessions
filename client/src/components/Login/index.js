@@ -12,13 +12,25 @@ function Login() {
   const handleLoginForm = (event) => {
     event.preventDefault();
     if (username && password) {
-        API.Login({
+        API.login({
           username,
           password
         })
         .then(res => {
           const token = res.data.token;
           console.log("token " + token)
+          // The token is stored in local storage on client side
+          sessionStorage.setItem("myToken", token);
+        })
+        .then(() => {
+          // If the user is logged in, continue with the request to the restricted route
+          if (username) {
+            window.location.replace("/profile");
+          } else {
+            // If the user isn't logged in, redirect them to the login page
+            window.location.replace("/");
+          }
+          // window.location.replace("/member/profile");
         })
         .catch(err => console.log(err));
     }
