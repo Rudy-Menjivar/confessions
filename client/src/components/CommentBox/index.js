@@ -47,7 +47,7 @@ function CreateCommentBox(props) {
         <div className="CreateCommentBox">
             {comments.map((comment, i) => <p key={`comment${i}`}>{comment}</p>)}
             <Form>
-                <Form.Group className="comment" ccontrolId="formBasicComment">
+                <Form.Group className="comment" controlId="formBasicComment">
                     <Form.Label>Comment:</Form.Label>
                     <Form.Control className="commenttext" onChange={(e) => updateComments(e)} as="textarea" rows={2} placeholder="Leave a comment." value={newComment} />
                 </Form.Group>
