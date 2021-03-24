@@ -1,6 +1,7 @@
 .form-group {
   margin-left: 30%;
   margin-right: 30%;
+  margin-top: 10px;
 }
 
 .h1,
@@ -10,4 +11,10 @@ h1 {
 
 .btn {
   margin-left: 30%;
+}
+
+.login-form {
+  margin-bottom: 80px;
+  border: solid, 4px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }

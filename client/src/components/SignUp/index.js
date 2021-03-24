@@ -29,8 +29,8 @@ function SignUp() {
     }
 
     return (
-        <Form>
-            <Form.Group controlId="formBasicUsername">
+        <Form className="signup">
+            <Form.Group className="signup" controlId="formBasicUsername">
                 <Form.Label>Username</Form.Label>
                 <Form.Control onChange={(e) => updateUsername(e)} type="username" placeholder="Please enter your username" />
             </Form.Group>
@@ -38,7 +38,7 @@ function SignUp() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control onChange={(e) => updatePassword(e)} type="password" placeholder="Password" />
             </Form.Group>
-            <Button onClick={handleSignupForm} variant="primary" type="submit">Submit</Button>
+            <Button onClick={handleSignupForm} variant="dark" type="submit">Submit</Button>
         </Form>
     );
 };
