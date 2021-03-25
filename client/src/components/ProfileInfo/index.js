@@ -4,7 +4,7 @@ import API from "../../utils/userAPI";
 
 function ProfileInfo() {
 
-    const [userData, setUserData] = useState([]);
+    const [ setUserData ] = useState([]);
 
     useEffect(() => {
         loadUserData();
@@ -23,11 +23,6 @@ function ProfileInfo() {
                 <p>Welcome </p>
                 <p>Info: (...)</p>
             </div>
-            {/* {userData.map(data => (
-                <div className="profileInfo-container">
-                    <p>Welcome {data.user.username}</p>
-                    <p>Info: (...)</p>
-                </div>))} */}
         </div>
     );
 };

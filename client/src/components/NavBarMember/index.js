@@ -16,9 +16,9 @@ function NavBarMember() {
                     <Nav.Link href="/welcome">Log out</Nav.Link>
                     <NavDropdown.Divider />
                     <NavDropdown title="Confession Topics" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Example</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another example</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Some other example</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.1">Crushes</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">School</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Work</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Form inline>
