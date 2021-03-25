@@ -1,5 +1,5 @@
 // /* eslint-disable react/prefer-stateless-function */
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import NoMatch from "./pages/NoMatch";
@@ -10,6 +10,16 @@ import Profile from "./components/Profile";
 import NewsFeed from "./components/NewsFeed";
 
 function App() {
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    let myUser = sessionStorage.getItem("myUser");
+    setUser({ username: myUser })
+  },[])
+
+  const handeUserUpdate = (user) => {
+    setUser(user)
+  }
   return (
     <Router>
       <div>
@@ -17,15 +27,13 @@ function App() {
           <Route exact path={["/", "/welcome"]}>
             <Welcome />
           </Route>
-          <Route exact path={["/login"]}>
-            <Login />
+          <Route exact path={["/login"]} render={(props) => <Login {...props} handleUser={handeUserUpdate} />}>
+            
           </Route>
           <Route exact path={["/signup"]}>
             <SignUp />
           </Route>
-          <Route exact path={["/profile"]}>
-            <Profile />
-          </Route>
+          <Route exact path={["/profile"]} render={ (props) => user.username ? <Profile /> : <Login {...props} handleUser={handeUserUpdate} />}/>
           <Route exact path={["/newsfeed"]}>
             <NewsFeed />
           </Route>

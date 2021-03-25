@@ -34,7 +34,7 @@ router.post(
                       }
                       const token = jwt.sign({ user: payload }, 'TOP_SECRET', options);
                       console.log(token)
-                      return res.json({ token });
+                      return res.json({ token, user: user.username });
                   }
               );
 

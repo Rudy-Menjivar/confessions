@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import API from "../../utils/userAPI.js";
 
-function Login() {
+function Login(props) {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -18,9 +18,12 @@ function Login() {
         })
         .then(res => {
           const token = res.data.token;
+          const myUser = res.data.user;
+          console.log(res.data)
           console.log("token " + token)
           // The token is stored in local storage on client side
           sessionStorage.setItem("myToken", token);
+          sessionStorage.setItem("myUser", myUser);
         })
         .then(() => {
           // If the user is logged in, continue with the request to the restricted route
@@ -28,9 +31,8 @@ function Login() {
             window.location.replace("/profile");
           } else {
             // If the user isn't logged in, redirect them to the login page
-            window.location.replace("/");
+            //window.location.replace("/");
           }
-          // window.location.replace("/member/profile");
         })
         .catch(err => console.log(err));
     }
@@ -49,6 +51,7 @@ function Login() {
         className="login-form"
       >
         <Form.Group controlId="formGroupUsername">
+          <h2 className="animate__animated animate__fadeIn">Log In</h2>
           <Form.Label>
             Username
           </Form.Label>
@@ -74,6 +77,7 @@ function Login() {
         </Form.Group>
         <Button 
           onClick={handleLoginForm}
+          variant="dark"
           type="submit"
         >
           Login

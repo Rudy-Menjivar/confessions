@@ -1,7 +1,8 @@
 .newsfeed-card {
     border: solid 1px;
-    margin: 30px;
+    margin: 130px;
     margin-bottom: 100px;
+    margin-top: 20px;
 }
 
 .post-owner, 
@@ -9,6 +10,16 @@
 .reaction-box, 
 .comments,  
 .comment-box {
-    border: solid 1px;
     margin: 10px;
+    background-image: url(../../images/background1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.newsfeed-background {
+    background-color: rgb(163, 179, 182);
+    background-image: url(../../images/background1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }

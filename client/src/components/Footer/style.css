@@ -3,10 +3,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    top: 790px;
-    min-height: 50px;
     background: rgb(39, 39, 39);
     color: white;
-    text-align: left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
 }

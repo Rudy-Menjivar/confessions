@@ -23,9 +23,8 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     update: function (req, res) {
-        console.log(req.params.id, req.body)
         db.Confession
-        .updateOne({ _id: req.params.id }, { comment: req.body.comments })
+        .updateOne({ _id: req.params.id }, req.body)
         .then(dbUpdatedConfession => {
             console.log(dbUpdatedConfession)
             res.json(dbUpdatedConfession)

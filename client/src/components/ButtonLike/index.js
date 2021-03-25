@@ -1,5 +1,5 @@
 import React from "react";
-import API from "../../utils/newsfeedAPI";
+import API from "../../utils/profileAPI";
 import "./style.css";
 
 function LikeButton(props) {
