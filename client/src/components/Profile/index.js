@@ -9,7 +9,6 @@ import LikeButton from "../ButtonLike";
 import DislikeButton from "../ButtonDislike";
 import EditButton from "../ButtonEdit";
 import DeleteButton from "../ButtonDelete";
-import ReportButton from "../ButtonReport";
 import CreateCommentBox from "../CommentBox";
 
 function Profile() {
@@ -69,11 +68,6 @@ function Profile() {
                                     />
                                     <EditButton />
                                     <DeleteButton onClick={() => deleteOneConfession(post._id)} />
-                                    <ReportButton
-                                        className="report"
-                                        id={post._id}
-                                        value={post.reported}
-                                    />
                                     <CreateCommentBox className="comment" onClick={() => CreateCommentBox()} id={post._id}>Comments: {post.comments}</CreateCommentBox>
                                 </PostCard>
                             ))}
