@@ -49,6 +49,7 @@ function Login() {
         className="login-form"
       >
         <Form.Group controlId="formGroupUsername">
+          <h2 className="animate__animated animate__fadeIn">Log In</h2>
           <Form.Label>
             Username
           </Form.Label>
