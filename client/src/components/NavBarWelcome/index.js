@@ -9,6 +9,8 @@ function NavBarWelcome() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
               <NavDropdown.Divider />
+              <Nav.Link href="/">Home</Nav.Link>
+              <NavDropdown.Divider />
               <Nav.Link href="/login">Log in</Nav.Link>
               <NavDropdown.Divider />
               <Nav.Link href="/signup">Sign up</Nav.Link>
