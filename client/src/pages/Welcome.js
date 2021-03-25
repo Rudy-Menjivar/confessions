@@ -7,8 +7,8 @@ function Welcome() {
     return (
         <div>
             <NavBarWelcome />
-            <Jumbotron />
-            <h1>Welcome</h1>
+            <Jumbotron /> 
+            <h1 className="animate__animated animate__fadeIn">Welcome</h1>
             <Login />
         </div>
     );
