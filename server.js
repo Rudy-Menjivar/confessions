@@ -6,6 +6,10 @@ const passport = require("passport");
 const connectDB = require("./config/connectDB")
 const PORT = process.env.PORT || 3001;
 
+// Load config variables
+const dotenv = require('dotenv')
+dotenv.config({ path: './config/.env' })
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
