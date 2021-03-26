@@ -6,7 +6,7 @@ const confessionSchema = new Schema({
     content: {type: String, required: true},
     likes: { type: Number, default: 0 },
     dislikes: { type: Number, default: 0 },
-    comment: Array,
+    comments: Array,
     category: Array,
     reported: { type: Boolean, default: false },
     owner: { 
