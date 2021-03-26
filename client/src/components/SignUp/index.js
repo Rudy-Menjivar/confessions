@@ -16,6 +16,10 @@ function SignUp() {
                 username,
                 password
             })
+                .then(() => {
+                    alert("You have successfully signed up.");
+                    window.location.replace("/login");
+                })
                 .catch(err => console.log(err));
         }
     };
@@ -31,7 +35,7 @@ function SignUp() {
     return (
         <Form className="signup">
             <Form.Group className="signup" controlId="formBasicUsername">
-            <h2 className="animate__animated animate__fadeIn">Sign Up</h2>
+                <h2 className="animate__animated animate__fadeIn">Sign Up</h2>
                 <Form.Label>Username</Form.Label>
                 <Form.Control onChange={(e) => updateUsername(e)} type="username" placeholder="Please enter your username" />
             </Form.Group>

@@ -1,6 +1,9 @@
 import axios from "axios"
 
 export default {
+    signup: function(userData) {
+        return axios.post("/api/signup", userData);
+    },
     login: function(userData) {
         // This route is under testing, please don't remove now
         // return axios.get("/api/login", { params: { data: userData}});
@@ -15,7 +18,4 @@ export default {
         },
         { params: { data: userData}});
     },
-    signup: function(userData) {
-        return axios.post("/api/signup", userData);
-    }
 }
