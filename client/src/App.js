@@ -28,12 +28,11 @@ function App() {
             <Welcome />
           </Route>
           <Route exact path={["/login"]} render={(props) => <Login {...props} handleUser={handeUserUpdate} />}>
-            
           </Route>
           <Route exact path={["/signup"]}>
             <SignUp />
           </Route>
-          <Route exact path={["/profile"]} render={ (props) => user.username ? <Profile /> : <Login {...props} handleUser={handeUserUpdate} />}/>
+          <Route exact path={["/profile"]} render={ (props) => user ? <Profile /> : <Welcome {...props} handleUser={handeUserUpdate} />}/>
           <Route exact path={["/newsfeed"]}>
             <NewsFeed />
           </Route>
