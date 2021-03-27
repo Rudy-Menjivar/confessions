@@ -3,8 +3,6 @@ const router = express.Router();
 // const profileRoutes = require("./api/profile");
 // const newsfeedRoutes = require("./newsfeed");
 
-const isAuthenticated = require("../config/middleware/isAuthenticated");
-
 router.get(
   "/user_data",
   (req, res, next) => {
