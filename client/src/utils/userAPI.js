@@ -9,6 +9,9 @@ export default {
         // return axios.get("/api/login", { params: { data: userData}});
         return axios.post("/api/login", userData);
     },
+    logout: function(userData) {
+        return axios.post("/api/logout", userData);
+    },
     getUserData: function (userData) {
         return axios.get("/api/user_data/",
         {

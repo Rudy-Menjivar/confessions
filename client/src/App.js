@@ -14,12 +14,13 @@ function App() {
 
   useEffect(() => {
     let myUser = sessionStorage.getItem("myUser");
-    setUser({ username: myUser })
-  },[])
+    setUser({ username: myUser });
+  },[]);
 
   const handeUserUpdate = (user) => {
-    setUser(user)
-  }
+    setUser(user);
+  };
+
   return (
     <Router>
       <div>
@@ -32,10 +33,8 @@ function App() {
           <Route exact path={["/signup"]}>
             <SignUp />
           </Route>
-          <Route exact path={["/profile"]} render={ (props) => user ? <Profile /> : <Welcome {...props} handleUser={handeUserUpdate} />}/>
-          <Route exact path={["/newsfeed"]}>
-            <NewsFeed />
-          </Route>
+          <Route exact path={["/profile"]} render={() => user.username ? <Profile /> : <Welcome />} />
+          <Route exact path={["/newsfeed"]} render={() => user.username ? <NewsFeed /> : <Welcome />} />
           <Route component={NoMatch} />
         </Switch>
         <Footer />

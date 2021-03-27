@@ -1,7 +1,23 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import API from "../../utils/userAPI";
 
 function NavBarMember() {
+
+    function logout(event) {
+        event.preventDefault();
+        API.logout({
+        })
+        .then(
+          sessionStorage.removeItem("myUser"),
+          sessionStorage.removeItem("myToken")
+        )
+        .then(
+            window.location.replace("/")
+        )
+        .catch(err => console.log(err));
+    };
+
     return (
         <Navbar bg="white" expand="lg">
             <Navbar.Brand href="/member">Welcome "User"</Navbar.Brand>
@@ -13,7 +29,7 @@ function NavBarMember() {
                     <NavDropdown.Divider />
                     <Nav.Link href="/newsfeed">News Feed</Nav.Link>
                     <NavDropdown.Divider />
-                    <Nav.Link href="/welcome">Log out</Nav.Link>
+                    <Nav.Link href="/" onClick={logout}>Log out</Nav.Link>
                     <NavDropdown.Divider />
                     <NavDropdown title="Confession Topics" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Crushes</NavDropdown.Item>
