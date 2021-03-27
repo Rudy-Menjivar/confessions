@@ -1,20 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import API from "../../utils/profileAPI";
+import APIuser from "../../utils/userAPI";
 
 function PostCreateBox() {
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
 
+    const [ owner, setOwner ] = useState("");
+
+    useEffect(() => {
+        loadUserData();
+    });
+
+    function loadUserData() {
+        APIuser.getUserData()
+            .then(res =>
+                setOwner(res.data.user.username)
+            )
+            .catch(err => console.log(err));
+    };
+
     const handleCreateConfessionForm = (event) => {
         event.preventDefault();
         if (title && content) {
             API.saveConfession({
                 title, 
-                content
+                content, 
+                owner
             })
             .then(window.location.reload(false))
             .catch(err => console.log(err));

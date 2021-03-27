@@ -11,6 +11,7 @@ const confessionSeed = [
     likes: 3,
     dislikes: 0,
     comments: ["I like pizza too.", ""],
+    owner: "whiteRabbit",
     reported: false
   },
   {
@@ -19,6 +20,7 @@ const confessionSeed = [
     category: "School",
     likes: 2,
     dislikes: 1,
+    owner: "whiteRabbit",
     reported: false
   },
   {
@@ -27,6 +29,7 @@ const confessionSeed = [
     category: "Lies",
     likes: 5,
     dislikes: 1,
+    owner: "blackRabbit",
     reported: false
   },
   {
@@ -35,6 +38,7 @@ const confessionSeed = [
     category: "School",
     likes: 0,
     dislikes: 0,
+    owner: "blackRabbit",
     reported: false
   }
 ];

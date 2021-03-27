@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import API from "../../utils/newsfeedAPI";
 import NavBarMember from "../NavBarMember";
+import ProfileInfo from "../ProfileInfo";
+import PostCreateBox from "../PostCreateBox";
 import NewsFeedCard from "../NewsFeedCard";
 import LikeButton from "../ButtonLike";
 import DislikeButton from "../ButtonDislike";
@@ -29,15 +31,22 @@ function NewsFeed() {
     return (
         <div className="newsfeed-background">
             <NavBarMember />
+            <section>
+                <ProfileInfo />
+            </section>
             <h1>News Feed</h1>
+            <section>
+                <PostCreateBox />
+            </section>
             {confessions.length ? (
                 <div>
                     {confessions.map(confession => (
                         <NewsFeedCard key={confession._id}>
                             <div className="newsfeed-card">
                                 <div className="post-owner">
-                                    <h5>Username: </h5>
+                                    <h5>Username: {confession.owner}</h5>
                                 </div>
+                                <h5><strong>{confession.title}</strong></h5>
                                 <div className="newsfeed-posts">
                                     <p>{confession.content}</p>
                                 </div>
