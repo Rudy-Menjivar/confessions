@@ -27,7 +27,7 @@ function Login() {
         .then(() => {
           // If the user is logged in, continue with the request to the restricted route
           if (username) {
-            window.location.replace("/profile");
+            window.location.replace("/newsfeed");
           } 
         })
         .catch((err) => {
