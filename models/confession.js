@@ -10,8 +10,9 @@ const confessionSchema = new Schema({
     category: Array,
     reported: { type: Boolean, default: false },
     owner: { 
-        type: Schema.Types.ObjectId,  
-        ref: "User"
+        // type: Schema.Types.ObjectId,  
+        // ref: "User"
+        type: String
     },
     date: { type: Date, default: Date.now }
 });
